@@ -1,0 +1,61 @@
+while True:
+    try:
+        convert = input("Enter the number corresponding to the conversion relation: 1) Celsius and Fahrenheit, 2) Celsius and Kelvin, 3) Fahrenheit and Kelvin: ")
+        if convert == "1":
+            caf = input("Enter the number corresponding to the conversion: 1) Celsius to Fahrenheit, 2) Fahrenheit to Celsius: ")
+            while True:
+                try:
+                    if caf == "1":
+                        Celsius = float(input("Enter the temperature in Celsius: "))
+                        Fahrenheit = (Celsius * 9/5) + 32
+                        print(f"The temperature in Fahrenheit is: {Fahrenheit}")
+                        break
+                    elif caf == "2":
+                        Fahrenheit = float(input("Enter the temperature in Fahrenheit: "))
+                        Celsius = (Fahrenheit - 32) * 5/9
+                        print(f"The temperature in Celsius is: {Celsius}")
+                        break
+                    else:
+                        print("Invalid option, please select 1 or 2.")
+                except ValueError:
+                    print("Invalid input, please enter a numerical value.")
+        elif convert == "2":
+            ck = input("Enter the number corresponding to the conversion: 1) Celsius to Kelvin, 2) Kelvin to Celsius: ")
+            while True:
+                try:
+                    if ck == "1":
+                        Celsius = float(input("Enter the temperature in Celsius: "))
+                        Kelvin = Celsius + 273.15
+                        print(f"The temperature in Kelvin is: {Kelvin}")
+                        break
+                    elif ck == "2":
+                        Kelvin = float(input("Enter the temperature in Kelvin: "))
+                        Celsius = Kelvin - 273.15
+                        print(f"The temperature in Celsius is: {Celsius}")
+                        break
+                    else:
+                        print("Invalid option, please select 1 or 2.")
+                except ValueError:
+                    print("Invalid input, please enter a numerical value.")
+        elif convert == "3":
+            fk = input("Enter the number corresponding to the conversion: 1) Fahrenheit to Kelvin, 2) Kelvin to Fahrenheit: ")
+            while True:
+                try:
+                    if fk == "1":
+                        Fahrenheit = float(input("Enter the temperature in Fahrenheit: "))
+                        Kelvin = (Fahrenheit - 32) * 5/9 + 273.15
+                        print(f"The temperature in Kelvin is: {Kelvin}")
+                        break
+                    elif fk == "2":
+                        Kelvin = float(input("Enter the temperature in Kelvin: "))
+                        Fahrenheit = (Kelvin - 273.15) * 9/5 + 32
+                        print(f"The temperature in Fahrenheit is: {Fahrenheit}")
+                        break
+                    else:
+                        print("Invalid option, please select 1 or 2.")
+                except ValueError:
+                    print("Invalid input, please enter a numerical value.")
+        else:
+            print("Invalid option, please select 1, 2, or 3.")
+    except ValueError:
+        print("Invalid input, please try again.")
